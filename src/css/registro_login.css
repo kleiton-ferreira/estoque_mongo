@@ -1,0 +1,96 @@
+/*estoque/src/css/registro_login.css*/
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('../img/background.png') no-repeat center center fixed, 
+                linear-gradient(135deg, #4b4b4b, #8d8d8d); /* Adiciona a imagem de fundo */
+    background-size: cover; /* Cobre toda a tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #5a5a5a; /* Cor do texto */
+}
+
+/* Estilo para o contêiner do formulário */
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Torna o fundo do formulário levemente transparente */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    position: relative; /* Adiciona posição relativa para posicionar a logo */
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Estilo para os inputs e o select */
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container input, .form-container select {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff; /* Fundo branco para os inputs e select */
+    color: #5a5a5a; /* Cor do texto */
+}
+
+.form-container input:focus, .form-container select:focus {
+    border-color: #007bff; /* Cor de destaque quando focado */
+    outline: none;
+}
+
+/* Estilo específico para o select (tipo de usuário) */
+.form-container select {
+    cursor: pointer;
+}
+
+.form-container select option {
+    color: #5a5a5a; /* Cor do texto das opções */
+}
+
+/* Estilo para o botão */
+.form-container button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #0056b3; /* Mudança de cor no hover */
+}
+
+/* Estilo para os links */
+.form-container p {
+    margin-top: 10px;
+}
+
+.form-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.form-container a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Estilo para a logo */
+.logo {
+    position: absolute;
+    top: -130px; /* Ajuste a posição conforme necessário */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px; /* Ajuste a largura conforme necessário */
+    height: 200px;
+}

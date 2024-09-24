@@ -1,0 +1,164 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #001f3f, #001020); /* Gradiente azul marinho */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo do formulário levemente transparente */
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    position: relative; /* Necessário para o posicionamento dos botões */
+    width: 100%;
+    max-height: 100%; /* Utiliza a altura máxima disponível */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container img {
+    width: 170px; /* Logomarca */
+    margin-bottom: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-container h2 {
+    color: #333;
+}
+
+form {
+    flex: 1;
+    overflow-y: auto; /* Permite rolagem dentro do formulário, se necessário */
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex-shrink: 0; /* Previne que os campos encolham */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #5a5a5a;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    resize: vertical; /* Permite apenas redimensionamento vertical */
+    max-width: 100%; /* Garante que o campo não ultrapasse o container */
+    flex-grow: 1; /* Faz o campo de texto crescer com o espaço disponível */
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    flex-shrink: 0; /* Previne que os botões encolham */
+}
+
+.form-actions button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 48%; /* Ajusta a largura dos botões */
+}
+
+.form-actions .btn-primary {
+    background-color: #007BFF;
+}
+
+.form-actions .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-actions .btn-secondary {
+    background-color: #747474;
+}
+
+.form-actions .btn-secondary:hover {
+    background-color: #5c5c5c;
+}
+
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-container img {
+        width: 120px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-actions button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .form-actions button:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .form-container img {
+        width: 100px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+    }
+
+    .form-actions button {
+        font-size: 14px;
+    }
+}

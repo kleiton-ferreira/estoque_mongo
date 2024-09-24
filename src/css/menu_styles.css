@@ -1,0 +1,62 @@
+/*estoque/src/css/menu_styles.css*/
+
+/* Estilizando a página geral */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(120deg, #001f3f, #001020); /* Gradiente azul marinho */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+/* Container principal */
+.container {
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+}
+
+/* Estilo do título */
+.title h1 {
+    color: #0056b3; /* Azul que você deseja */
+}
+
+/* Estilizando os botões do menu */
+.adm-buttons button {
+    background-color: #007BFF; /* Verde vibrante */
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.adm-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilizando o botão de logout com uma cor diferente */
+#logout-button {
+    background-color: #dc3545; /* Vermelho */
+}
+
+#logout-button:hover {
+    background-color: #c82333;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .adm-buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}

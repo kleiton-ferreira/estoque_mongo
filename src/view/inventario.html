@@ -1,0 +1,62 @@
+<!--estoque/src/view/inventario.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyStock - Estoque</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/logo_2.png" type="image/x-icon">
+    
+</head>
+<body>
+    <div class="container">
+        <span class="title"><b><h1>EasyStock - Produtos</h1></b></span>
+        
+        <div class="top-buttons"> <!-- Adicionei esse div para agrupar os botões -->
+            <button id="user-button" onclick="window.location.href='usuarios.html'">Usuários</button>
+            <button id="client-button" onclick="window.location.href='clientes.html'">Clientes</button>
+            <button id="contact-button">Contato</button> <!-- Botão de Contato  -->
+            <button id="generate-report">Relatório</button>
+            <button id="logout-button">Logout</button><!-- Botão de Logout -->
+           
+        </div>
+        
+        <br><br>
+        <div id="alert-container"></div> <!-- Container for alerts -->
+        <div class="form-container">
+            <input type="text" id="product-name" placeholder="Nome do Produto">
+            <input type="number" id="product-quantity" placeholder="Quantidade">
+            <input type="number" id="product-price" placeholder="Preço (R$)">
+            <input type="number" id="product-discount" placeholder="Desconto (%)">
+            <button id="add-product">Adicionar Produto</button>
+        </div>
+        <input type="text" id="search-bar" placeholder="Buscar pelo nome"> <br><br>
+    
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço (R$)</th>
+                        <th>Valor Total (R$)</th>
+                        <th>Desconto (%)</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                
+                <tbody id="product-list">
+                    <!-- Products will be added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="../js/inventario.js"></script>
+    <script src="../js/contato.js"></script>
+
+</body>
+</html>

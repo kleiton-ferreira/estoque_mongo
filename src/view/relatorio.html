@@ -1,0 +1,49 @@
+<!--estoque/src/view/relatorio.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyStock - Relatório</title>
+    <link rel="stylesheet" href="../css/relatorio.css">
+    <link rel="shortcut icon" href="../img/logo_2.png" type="image/x-icon">
+    <!-- Include jsPDF and html2pdf libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container" id="report-content">
+        <h1>EasyStock - Relatório de Estoque</h1>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome do Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço (R$)</th>
+                        <th>Valor Total (R$)</th>
+                        <th>Desconto (%)</th>
+                        <th>Estoque Baixo</th>
+                    </tr>
+                </thead>
+                <tbody id="report-list">
+                    <!-- Report will be added here -->
+                </tbody>
+            </table>
+        </div>
+        
+        <h2 id="grand-total">Valor Total: R$0.00</h2>
+        
+        <div class="button-container">
+            <button id="back-button">Voltar</button> <!-- Button to go back -->
+            <button id="pdf-button">PDF</button> <!-- Button to generate PDF -->
+        </div>
+        
+    </div>
+
+    <script src="../js/relatorio.js"></script>
+    <script src="../js/contato.js"></script>
+</body>
+</html>

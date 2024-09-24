@@ -1,0 +1,129 @@
+/* estoque/src/css/relatorio.css */
+
+/* Estilos gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    min-height: 100vh; /* Garante que a página ocupe toda a altura */
+    padding-top: 20px; /* Adiciona espaço no topo */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    max-width: 1200px;
+    width: 90%;
+    text-align: center;
+    margin-top: 20px; /* Espaço superior para melhor visualização */
+    margin-bottom: 50px; /* Espaço inferior para evitar corte no PDF */
+    padding-bottom: 50px; /* Adiciona espaçamento inferior */
+}
+
+
+h1 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: inline-block;
+    border-bottom: 3px solid #e74c3c;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 20px;
+    padding-bottom: 30px; /* Adiciona espaçamento interno inferior */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    background-color: #fafafa;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 15px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+th {
+    background-color: #f7f7f7;
+    color: #333;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo dos Botões */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5%; /* Arredondamento suave de 5% */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+/* Botão PDF */
+#pdf-button {
+    background-color: #ff6b6b; /* Vermelho claro estiloso */
+    color: #ffffff;
+}
+
+#pdf-button:hover {
+    background-color: #e74c3c; /* Vermelho escuro */
+}
+
+/* Botão Voltar */
+#back-button {
+    background-color: #bdc3c7; /* Cinza claro */
+    color: #2c3e50;
+}
+
+#back-button:hover {
+    background-color: #7f8c8d; /* Cinza escuro */
+}
+
+/* Ajuste para impressão */
+@media print {
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    button {
+        display: none; /* Esconde os botões na impressão */
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+}

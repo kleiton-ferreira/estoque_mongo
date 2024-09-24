@@ -1,0 +1,58 @@
+<!--estoque/src/view/clientes.html-->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyStock - Clientes</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="shortcut icon" href="../img/logo_2.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <span class="title"><b><h1>EasyStock - Gerenciamento de Clientes</h1></b></span>
+
+        <div class="top-buttons">
+            <button id="inventory-button" onclick="window.location.href='inventario.html'">Estoque</button>
+            <button id="user-button" onclick="window.location.href='usuarios.html'">Usuários</button>
+            <button id="contact-button" onclick="window.location.href='contato.html'">Contato</button>
+            <button id="logout-button" onclick="window.location.href='../index.html'">Logout</button>
+        </div>
+
+        <br><br>
+        <div id="alert-container"></div>
+
+        <div class="form-container">
+            <input type="text" id="client-name" placeholder="Nome do Cliente">
+            <input type="text" id="client-cpf" placeholder="CPF">
+            <input type="email" id="client-email" placeholder="Email">
+            <input type="date" id="client-registration-date" placeholder="Data de Registro">
+            <button id="add-client">Adicionar Cliente</button>
+        </div>
+
+        <input type="text" id="search-bar" placeholder="Buscar pelo nome"> <br><br>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Email</th>
+                        <th>Data de Registro</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="client-list">
+                    <!-- Clientes serão adicionados aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/clientes.js"></script>
+    <script src="../js/contato.js"></script>
+</body>
+</html>

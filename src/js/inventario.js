@@ -167,13 +167,14 @@ async function updateValues(event) {
 
 
 function checkLowStock(row) {
-    const quantity = row.querySelector('.quantity-input').value;
-    if (quantity < 10) {
-        row.style.backgroundColor = '#ffcccc';
+    const quantity = row.querySelector('.quantity-input').value; // Obtém a quantidade do input
+    if (quantity < 10) { // Verifica se a quantidade é menor que 10
+        row.style.backgroundColor = '#ffcccc'; // Muda a cor de fundo da linha para vermelho claro
     } else {
-        row.style.backgroundColor = '';
+        row.style.backgroundColor = ''; // Restaura a cor de fundo padrão
     }
 }
+
 
 function showAlert(message) {
     const alertContainer = document.getElementById('alert-container');
@@ -189,21 +190,22 @@ function clearAlerts() {
 }
 
 function updateAlert() {
-    const productList = document.getElementById('product-list').querySelectorAll('tr');
-    let hasLowStock = false;
+    const productList = document.getElementById('product-list').querySelectorAll('tr'); // Obtém todas as linhas da tabela de produtos
+    let hasLowStock = false; // Variável para verificar se há algum produto com estoque baixo
 
-    productList.forEach(row => {
-        const quantity = row.querySelector('.quantity-input').value;
-        if (quantity < 10) {
-            hasLowStock = true;
+    productList.forEach(row => {  // Itera sobre cada linha da tabela de produtos
+        const quantity = row.querySelector('.quantity-input').value; // Obtém a quantidade do produto
+        if (quantity < 10) { // Verifica se a quantidade é menor que 10
+            hasLowStock = true; // Define que existe estoque baixo
         }
     });
 
-    clearAlerts();
-    if (hasLowStock) {
-        showAlert('Atenção: Estoque baixo');
+    clearAlerts(); // Limpa alertas anteriores
+    if (hasLowStock) { // Se houver estoque baixo
+        showAlert('Atenção: Estoque baixo'); // Exibe a mensagem de alerta
     }
 }
+
 
 async function fetchProducts() {
     try {
@@ -216,18 +218,19 @@ async function fetchProducts() {
 }
 
 function generateReport() {
-    const productList = document.getElementById('product-list').querySelectorAll('tr');
-    const reportData = [];
+    const productList = document.getElementById('product-list').querySelectorAll('tr'); // Obtém todas as linhas da tabela de produtos
+    const reportData = [];  // Inicializa um array vazio para armazenar os dados do relatório
 
-    productList.forEach(row => {
-        const productId = row.cells[0].textContent;
-        const productName = row.cells[1].textContent;
-        const quantity = row.querySelector('.quantity-input').value;
-        const price = row.querySelector('.price-input').value;
-        const totalPrice = row.querySelector('.total-price').textContent.replace('R$', '');
-        const discount = row.querySelector('.discount-input').value; // Obtemos o desconto diretamente da input
-        const lowStock = quantity < 10 ? 'Sim' : 'Não';
+    productList.forEach(row => {  // Itera sobre cada linha da tabela de produtos
+        const productId = row.cells[0].textContent; // Extrai o ID do produto da primeira célula da linha
+        const productName = row.cells[1].textContent; // Extrai o nome do produto da segunda célula da linha
+        const quantity = row.querySelector('.quantity-input').value; // Obtém a quantidade a partir de um campo de entrada na linha
+        const price = row.querySelector('.price-input').value; // Obtém o preço a partir de um campo de entrada na linha
+        const totalPrice = row.querySelector('.total-price').textContent.replace('R$', ''); // Extrai o preço total da célula correspondente e remove o prefixo 'R$'
+        const discount = row.querySelector('.discount-input').value; // Obtemo o desconto diretamente da input
+        const lowStock = quantity < 10 ? 'Sim' : 'Não'; // Determina se o estoque está baixo (menos de 10 unidades)
 
+        // Adiciona um objeto com os dados do produto ao array reportData
         reportData.push({ 
             productId, 
             productName, 
@@ -239,9 +242,12 @@ function generateReport() {
         });
     });
 
-    localStorage.setItem('reportData', JSON.stringify(reportData));
-    window.location.href = './relatorio.html';
+   
+    localStorage.setItem('reportData', JSON.stringify(reportData));  // Armazena os dados do relatório no localStorage como uma string JSON
+  
+    window.location.href = './relatorio.html';   // Redireciona o usuário para a página do relatório
 }
+
 
 
 function searchProduct() {
